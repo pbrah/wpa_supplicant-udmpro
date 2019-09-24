@@ -22,7 +22,7 @@ CA_001E46-xxxx.pem                                                          100%
 Client_001E46-xxxx.pem                                                      100% 1119     1.1KB/s   00:00
 PrivateKey_PKCS1_001E46-xxxx.pem                                            100%  887     0.9KB/s   00:00
 
-scp -r wpa_supplicant.conf root@192.168.99.1:/tmp/
+scp -r wpa_supplicant.conf root@192.168.1.1:/tmp/
 wpa_supplicant.conf                                                         100%  680     0.7KB/s   00:00
 ```
 
