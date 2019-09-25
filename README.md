@@ -13,7 +13,7 @@ https://github.com/pbrah/att
 Before moving on to the next section, make sure you've copied your root certificate into the CA_*.pem file per the instructions of the 802.1x Credential Extraction Tool (mfg_dat_decode).
 
 ## running the docker image
-1.  scp your certs to the UDM Pro
+1.  scp your certs and wpa_supplicant.conf to the UDM Pro
 
 ```
 scp -r *.pem root@192.168.1.1:/tmp/
