@@ -30,7 +30,7 @@ wpa_supplicant.conf                                                         100%
 
 ```
 mkdir /mnt/data/docker/wpa_supplicant/
-cp -arfv /tmp/*pem wpa_supplicant.conf /mnt/data/docker/wpa_supplicant/
+cp -arfv /tmp/*pem /tmp/wpa_supplicant.conf /mnt/data/docker/wpa_supplicant/
 ```
 
 3. Update the wpa_supplicant.conf to reflect the correct paths for our container
