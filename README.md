@@ -41,7 +41,13 @@ sed -i 's,client_cert=",client_cert="/etc/wpa_supplicant/conf/,g' /mnt/data/dock
 sed -i 's,private_key=",private_key="/etc/wpa_supplicant/conf/,g' /mnt/data/docker/wpa_supplicant/wpa_supplicant.conf
 ```
 
-4. Run the wpa_supplicant docker container, the docker run command below assumes you are using port 9 or eth8 for your wan.  If not, adjust accordingly.
+4. Pull the docker image while you have an internet connection on the UDM Pro.  This step is optional if you plan on running step 5 while you have an internet connection.
+
+```
+docker pull pbrah/wpa_supplicant-udmpro:v1.0
+```
+
+5. Run the wpa_supplicant docker container, the docker run command below assumes you are using port 9 or eth8 for your wan.  If not, adjust accordingly.
 
 ```
 docker run --privileged --network=host --name=wpa_supplicant-udmpro -v /mnt/data/docker/wpa_supplicant/:/etc/wpa_supplicant/conf/ --log-driver=json-file --restart unless-stopped -d -ti pbrah/wpa_supplicant-udmpro:v1.0 -Dwired -ieth8 -c/etc/wpa_supplicant/conf/wpa_supplicant.conf
