@@ -33,7 +33,7 @@ mkdir /mnt/data/docker/wpa_supplicant/
 cp -arfv /tmp/*pem /tmp/wpa_supplicant.conf /mnt/data/docker/wpa_supplicant/
 ```
 
-3. Update the wpa_supplicant.conf to reflect the correct paths for our container.  *Do not run these more than once or you will end up with incorrect paths.*
+3. Update the wpa_supplicant.conf to reflect the correct paths for our container.  **Do not run these more than once or you will end up with incorrect paths.**
 
 ```
 sed -i 's,ca_cert=",ca_cert="/etc/wpa_supplicant/conf/,g' /mnt/data/docker/wpa_supplicant/wpa_supplicant.conf
