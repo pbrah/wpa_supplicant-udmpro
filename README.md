@@ -1,4 +1,11 @@
 # wpa_supplicant for UDM Pro
+## UPDATE 03.07.2020
+For v1.6.3 and newer you need to run your container with podman instead which changes the command slightly.  Below is an example of how to do this.  Keep in mind that currently there is an alias for docker to point to the podman executable on the UDM Pro since it was made to be a drop in replacement for docker commands.  I would still run this with the podman executable just in case that alias goes away in the future.
+```
+podman run --privileged --network=host --name=wpa_supplicant-udmpro -v /mnt/data/docker/wpa_supplicant/:/etc/wpa_supplicant/conf/ --log-driver=json-file --restart unless-stopped -d -ti pbrah/wpa_supplicant-udmpro:v1.0 -Dwired -ieth8 -c/etc/wpa_supplicant/conf/wpa_supplicant.conf
+```
+
+
 ## overview
 This guide has primarily been written for authenticating to AT&T U-Verse using wpa_supplicant on a UDM Pro.  It is assumed that you've already retrieved your certificates from a modem supplied by AT&T.  If you have not, you can purchase a used modem on ebay, such as the NVG589 and then root it to get the certificates.  I had success using the following guide.
 
